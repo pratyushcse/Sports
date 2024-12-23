@@ -1,0 +1,731 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 28px;
+    text-align: center;
+    color: #003d66;
+    margin-bottom: 20px;
+}
+
+/* Header Section */
+.header {
+    background-color: #003d66; /* Darker blue for professional feel */
+    color: white;
+    text-align: center;
+    padding: 15px 30px;
+    position: relative;
+    z-index: 1000;
+    animation: slideIn 1s ease-out forwards; /* Animation for smooth entry */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-logo {
+    width: 120px; /* Set to match the specified size */
+    height: 100px; /* Set to match the specified size */
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.header-title {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff; /* White text to match header color */
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100px); /* Starting position - above the viewport */
+        opacity: 0; /* Initially invisible */
+    }
+    to {
+        transform: translateY(0); /* Final position - in view */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Main Container */
+.main-container {
+    padding: 0px;
+    max-width: 100%; /* Ensures full width responsiveness */
+    margin: 0 auto; /* Centering the container */
+    animation: slideInFromCenter 1s ease-out forwards; /* Animation for smooth entry */
+    opacity: 0; /* Initially invisible */
+}
+
+/* Slide-in from center animation */
+@keyframes slideInFromCenter {
+    from {
+        transform: translateY(-100px); /* Start from above the viewport */
+        opacity: 0; /* Fully invisible */
+    }
+    to {
+        transform: translateY(0); /* Move to center position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Banner Section */
+.banner-section {
+    text-align: center;
+    background-color: #e0f7fa; /* Light cyan for banner background */
+    padding: 2px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.banner-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #003d66; /* Darker blue for title */
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.banner-title:hover {
+    color: #007bbd; /* Slight hover effect for title */
+}
+
+.banner-date, .banner-location {
+    font-size: 1.2rem;
+    color: #555; /* Darker gray for contrast */
+}
+
+.banner-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Welcome Message Styling */
+@keyframes darkNeonBox {
+    0% {
+        background-color: #002a4d; /* Dark blue start */
+        transform: rotateY(0deg); /* Box initial rotation */
+    }
+    25% {
+        background-color: #003366; /* Slightly lighter blue */
+        transform: rotateY(10deg); /* Slight right rotation */
+    }
+    50% {
+        background-color: #001f33; /* Deep blue shade */
+        transform: rotateY(-10deg); /* Slight left rotation */
+    }
+    75% {
+        background-color: #00214d; /* Light blue transition */
+        transform: rotateY(8deg); /* Slight right rotation */
+    }
+    100% {
+        background-color: #0d5d8f; /* Final light blue color */
+        transform: rotateY(-8deg); /* Slight left rotation */
+    }
+}
+
+.welcome-message {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #002a4d;
+    padding: 10px;
+    border-radius: 10px;
+    width: 30%;
+    margin: 20px auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    animation: darkNeonBox 8s infinite alternate;
+    transform-origin: center; /* Center rotation */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transitions */
+    position: relative; /* Ensures that we target only the box */
+    display: inline-block; /* Ensures hover applies only to the box */
+}
+
+.welcome-message:hover {
+    transform: rotateY(calc(10 * var(--direction))); /* Dynamic rotation based on cursor direction */
+    background-color: #05ffd5; /* Change background on hover for hover effect */
+}
+
+/* Cursor direction utility class */
+.cursor-direction {
+    --direction: 1; /* Default to right rotation */
+    transform-origin: center; /* Ensure rotation happens from center */
+}
+
+.cursor-direction.left {
+    --direction: -1; /* Left rotation */
+}
+
+.cursor-direction.right {
+    --direction: 1; /* Right rotation */
+}
+
+.cursor-direction.up {
+    --direction: 0; /* Rotate only vertically */
+}
+
+.cursor-direction.down {
+    --direction: 0; /* Rotate only vertically */
+}
+
+/* Events Section */
+.events-section {
+    width: 100%; /* Full width for the entire section */
+    padding: 20px 10%; /* Adding padding and centering for consistency */
+    box-sizing: border-box; /* Ensures padding is included in width calculations */
+}
+
+/* Event Group Layout */
+.event-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Full width */
+}
+
+.event-group:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Event Content */
+.event-content {
+    flex: 1;
+    margin-left: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Event Image */
+.event-image {
+    width: 100%;
+    height: auto;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* Event List */
+.event-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #003d66;
+    font-weight: bold;
+    width: 100%; /* Ensure full width for the list */
+}
+
+.event-item {
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 15px 5px;
+    border-radius: 5px;
+    background-color: #f1f8e9;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%; /* Ensure full width for list items */
+}
+
+.event-item:hover {
+    background-color: #007bbd; /* Blue background on hover */
+    color: white;
+}
+
+
+
+/* Event Boxes Styling */
+.events-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    gap: 20px; /* Adds spacing between boxes */
+}
+
+
+
+/* Section Title */
+.section-title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #003d66;
+    margin-bottom: 20px;
+    width: 100%; /* Full width */
+    padding: 10px 0;  /* Padding to give spacing */
+    background-color: #e0f7fa; /* Light blue background for aesthetics */
+    border-radius: 10px; /* Rounded corners for better styling */
+}
+
+.section-title-head {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #ffffff; /* White text for better contrast */
+    margin-bottom: 20px;
+    width: 100%; /* Full width */
+    padding: 35px 0; /* Padding for spacing */
+    background-color: #004085; /* Deep blue for a professional look */
+    border-top: 5px solid #007bbd; /* Top border in lighter blue */
+    border-bottom: 5px solid #007bbd; /* Bottom border in lighter blue */
+    border-radius: 0; /* Remove corner rounding for a sharper look */
+}
+
+
+
+
+.event-box {
+    width: auto; /* Changed width to 250px for track events */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #e3e3e3;
+    border: 3px solid black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: column; /* Ensure content is in a column */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+}
+
+.event-box:hover {
+    transform: scale(1.01);
+}
+
+/* Event Name */
+.event-box .event-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #003d66;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Event Category */
+.event-box .event-category {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Men Event Styles */
+.event-box.men {
+    background-color: #cce5ff;
+}
+
+.event-box.men .event-category {
+    background-color: #004085;
+}
+
+/* Women Event Styles */
+.event-box.women {
+    background-color: #ffd1dc;
+}
+
+.event-box.women .event-category {
+    background-color: #c2185b;
+}
+
+/* Special Event Styles */
+.event-box.special {
+    background-color: #ffecb3;
+}
+
+.event-box.special .event-category {
+    background-color: #ff9800;
+}
+.special-events-heading {
+    font-size: 32px; /* Large font size for prominence */
+    font-weight: bold;
+    color: #ffffff; /* White text for strong contrast */
+    text-align: center;
+
+    margin: 40px auto; /* Centered with vertical spacing */
+    width: 70%; /* Restrict width for balance */
+    padding: 20px; /* Enhanced padding for better spacing */
+    background-color: #343a40; /* Dark gray for a professional tone */
+    border-top: 5px solid #495057; /* Slightly lighter gray for top border */
+    border-bottom: 5px solid #495057; /* Matching bottom border */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.special-events-heading:hover {
+    background-color: #495057; /* Slightly lighter gray for hover effect */
+    transform: scale(1.02); /* Gentle zoom on hover */
+}
+
+/* Event Box Headers */
+.header-box {
+    width: 15%;
+    text-align: center; /* Align header text to the right */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    padding: 10px 10px; /* Add vertical padding for spacing */
+    background-color: #e3dcd8; /* Light blue for differentiation */
+    border-radius: 5px;
+    display: block; /* Ensure block-level formatting */
+}
+
+.registration-info {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(90deg, #ff1818, #feb47b);
+    color: #fff;
+    padding: 20px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 0;
+  }
+  
+  .registration-info strong {
+    color: #ffecd2; /* Slightly lighter for contrast */
+  }
+  
+
+  
+
+  .contact-box {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;
+    border: 2px solid #0078d4;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 100%; /* Use percentage for responsiveness */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.contact-info {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0078d4;
+    margin-bottom: 15px;
+    text-align: center;
+    word-wrap: break-word; /* Prevent long words from causing overflow */
+    max-width: 100%; /* Ensure it does not exceed the container */
+}
+
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-item {
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+    padding: 8px 10px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+    word-wrap: break-word; /* Prevent content overflow */
+    max-width: 100%; /* Ensure it fits within the container */
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-item:hover {
+    background-color: #0078d4;
+    color: #fff;
+    cursor: pointer;
+}
+
+  
+/* Full-width image section styling */
+.full-width-image {
+    width: 95%; /* 95% of the container width */
+    margin: 0 auto; /* Center the image horizontally */
+    padding: 0;
+    display: block;
+    max-width: 1500px; /* Optionally limit max width to prevent excessive stretching */
+    box-sizing: border-box; /* Ensures padding and border are included in width calculation */
+}
+
+.full-image {
+    width: 100%; /* Ensure image spans full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the entire container while maintaining aspect ratio */
+    border: 5px solid black; /* Black border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+
+/* Footer Section */
+.footer {
+    background-color: #003d66; /* Dark blue background */
+    color: white; /* White text */
+    padding: 5px; /* Increase padding for better spacing */
+    text-align: center; /* Center text alignment */
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100px; /* Set height for uniformity */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for effect */
+    
+}
+
+.footer-container {
+    max-width: 1200px; /* Optional: Limit width for large screens */
+    margin: 0 auto; /* Center container */
+    display: flex; /* Align content within the container */
+    flex-direction: column; /* Ensure vertical alignment */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+}
+
+.footer-text, .footer-credits {
+    margin: 5px 0; /* Add slight vertical spacing */
+    font-size: 1rem; /* Consistent font size */
+}
+
+/* Keyframes for sliding in from the left */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes for sliding in from the right */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Event Box Animation */
+.event-box {
+    animation: slideInFromLeft 1s ease-out forwards; /* Default animation for left */
+    opacity: 0; /* Start as invisible */
+}
+
+.event-box:nth-child(even) {
+    animation: slideInFromRight 1s ease-out forwards; /* Alternate animation for right */
+}
+
+
+
+
+
+
+
+.separator {
+    height: 4px;               /* Defines the height of the separator line */
+    background-color: #000000;     /* Light gray background color for the separator */
+}
+
+/* Media Queries for responsiveness */
+
+/* For screens smaller than 1200px (Tablets and below) */
+@media (max-width: 1200px) {
+    .header-container {
+        flex-direction: column; /* Stack header elements vertically */
+        text-align: center;
+    }
+
+    .main-container {
+        padding: 20px;
+    }
+
+    .banner-section {
+        padding: 10px;
+    }
+
+    .event-group {
+        flex-direction: column; /* Stack event details vertically */
+        margin-bottom: 15px;
+    }
+
+    .event-list {
+        font-size: 1rem; /* Slightly smaller font size */
+    }
+
+    .event-box {
+        width: 100%; /* Full width for event boxes */
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 1.5rem; /* Reduce font size for smaller screens */
+    }
+
+    .special-events-heading {
+        font-size: 1.8rem; /* Reduce heading font size */
+        margin: 20px auto;
+    }
+
+    .contact-box {
+        padding: 15px;
+    }
+}
+
+/* For screens smaller than 768px (Mobile devices) */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 15px;
+    }
+
+    .header-logo {
+        width: 100px;
+        height: 80px;
+    }
+
+    .header-title {
+        font-size: 28px; /* Adjust font size for mobile */
+    }
+
+    .welcome-message {
+        font-size: 2rem;
+        width: 70%; /* Make it more responsive */
+    }
+
+    .event-group {
+        flex-direction: column;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    .event-item {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .event-box {
+        width: 100%; /* Full width on mobile */
+        padding: 20px;
+    }
+
+    .registration-info {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .contact-info {
+        font-size: 1rem;
+    }
+
+    .contact-item {
+        font-size: 0.9rem; /* Slightly smaller font size */
+    }
+
+    .full-width-image {
+        width: 100%; /* Ensure the image takes full width on smaller screens */
+    }
+
+    .section-title-head {
+        font-size: 1.6rem; /* Smaller title for mobile */
+    }
+}
+
+/* For screens smaller than 480px (Extra small mobile devices) */
+@media (max-width: 480px) {
+    .header-title {
+        font-size: 24px; /* Smaller title */
+    }
+
+    .welcome-message {
+        font-size: 1.5rem;
+        width: 80%; /* Further adjust width */
+    }
+
+    .event-box {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem; /* Even smaller font size */
+    }
+
+    .special-events-heading {
+        font-size: 1.5rem; /* Adjust special events heading */
+    }
+
+    .contact-info {
+        font-size: 0.9rem;
+    }
+
+    .contact-item {
+        font-size: 0.8rem; /* Smaller contact item font */
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .event-list {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .event-heading {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-box {
+        width: 90%; /* Adjust width to fit smaller screens */
+        font-size: 1rem; /* Reduce font size */
+        padding: 5px 5px; /* Reduce padding */
+        margin-left: auto; /* Center the box horizontally */
+        margin-right: auto;
+    }
+}
